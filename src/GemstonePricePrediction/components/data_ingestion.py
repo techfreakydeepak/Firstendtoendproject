@@ -1,5 +1,5 @@
+
 import pandas as pd
-import numpy as np
 import os
 import sys
 from pathlib import Path
@@ -13,9 +13,9 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class DataIngestionConfig:
-    raw_data_path: str = os.path.join("artifacts", "raw.csv")
-    train_data_path: str = os.path.join("artifacts", "train.csv")
-    test_data_path: str = os.path.join("artifacts", "test.csv")
+    raw_data_path: Path = Path("artifacts", "raw.csv")
+    train_data_path: Path = Path("artifacts", "train.csv")
+    test_data_path: Path = Path("artifacts", "test.csv")
 
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):
@@ -24,7 +24,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logger.info("Data ingestion started")
         try:
-            data = pd.read_csv(Path(os.path.join(r"notebook/data", "GemstonePricePrediction.csv")))
+            data = pd.read_csv(Path(r'C:\Firstendtoendproject\notebooks\data\GemstonePricePrediction.csv'))
             logger.info("Reading a dataframe")
 
             self.config.raw_data_path.parent.mkdir(parents=True, exist_ok=True)
