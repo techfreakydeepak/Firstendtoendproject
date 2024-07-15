@@ -1,14 +1,11 @@
-#!/bin/bash
+echo [$(date)]: "START"
 
-echo "[`date`] START"
+echo [$(date)]: "creating env with python 3.11 version"
 
-# Create conda environment
-conda create --name env python=3.11
+conda create  --prefix ./env python=3.11 -y
 
-# Activate conda environment
-conda activate env
-
-# Install required packages
+echo [$(date)]: "activating the enviroment"
+conda activate ./env
+echo [$(date)]: "installing the required packages"
 pip install -r requirements.txt
-
-echo "[`date`] END"
+echo [$(date)]: "END"
