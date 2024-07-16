@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from src.GemstonePricePrediction.logger import logging
-#from src.GemstonePricePrediction.exception import customexception
+from src.GemstonePricePrediction.exception import customexception
 import os
 import sys
 from dataclasses import dataclass
