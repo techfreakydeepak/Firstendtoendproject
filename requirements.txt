@@ -2,5 +2,7 @@ pandas
 scikit-learn
 numpy
 seaborn 
+Flask
+
 
 -e .
